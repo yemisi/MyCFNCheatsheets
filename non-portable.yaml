@@ -1,0 +1,14 @@
+#This is not portable because the bucket name can't be reused to create multiple stacks
+# The MI ID is also not usable in any region asides from us-east-1
+
+Resources:
+  Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+       BucketName: 'cloud2hit-2022-830am'
+  Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-03ededff12e34e59e
+      KeyName: cfnclass
+      InstanceType: t2.micro
